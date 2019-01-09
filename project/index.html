@@ -1,10 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-	<meta charset="UTF-8">
-	<title>Ресторан</title>
+  <meta charset="UTF-8">
+  <title>Ресторан</title>
 </head>
 <body>
+  <header class="header">
+    <nav class="site-nav">
+      <button class="site-nav__toggle">Включить/выключить меню сайта</button>
+      <ul class="site-nav__list">
+        <li class="site-nav__item"><a href="#">Рестораны</a></li>
+        <li class="site-nav__item"><a href="#">Доставка</a></li>
+        <li class="site-nav__item"><a href="#">Караоке</a></li>
+        <li class="site-nav__item"><a href="#">О нас</a></li>
+        <li class="site-nav__item"><a href="#">Новости</a></li>
+        <li class="site-nav__item"><a href="#">Контакты</a></li>
+      </ul>
+    </nav>
 
+    <ul class="user-nav">
+      <li class="login user-nav__item">
+        <a class="login__userpic"><img src="#">Константин</a>
+      </li>
+    </ul>
+  </header>
+
+  <main class="main">
+    <section class="catalog">
+      <header class="catalog__header">
+        <div class="about-us">
+          <h1 class="about-us__title">Ресторан</h1>
+          <p class="about-us__info about-us__info--type-cuisine"><span>Кухня</span> Восточная</p>
+          <p class="about-us__info about-us__info--min-order-price"><span>Заказ</span> От 1000 Р</p>
+          <p class="about-us__info about-us__info--delivery-time"><span>Доставка</span> с 11:00 до 02:00</p>
+          <a class="about-restaurants" href="#">О ресторане</a>
+        </div>
+      </header>
+
+      <div class="filter catalog__filter">
+        <form class="filter-form" action="/" method="post">
+          <ul class="filter__btns">
+            <li class="input-btn">
+              <input class="input-btn__input" name="food-type" value="pop-food" type="radio" id="pop-food">
+              <label class="input-btn__label" for="pop-food">
+                Популярные <span class="input-btn__item-count">12</span>
+              </label>
+            </li>
+            <li class="input-btn">
+              <input class="input-btn__input" name="food-type" value="hot-food" type="radio" id="hot-food">
+              <label class="input-btn__label" for="hot-food">
+                Горячее <span class="input-btn__item-count">74</span>
+              </label>
+            </li>
+            <li class="input-btn">
+              <input class="input-btn__input" name="food-type" value="second-food" type="radio" id="second-food">
+              <label class="input-btn__label" for="second-food">
+                Гарниры <span class="input-btn__item-count">16</span>
+              </label>
+            </li>
+            <li class="input-btn">
+              <input class="input-btn__input" name="food-type" value="baked-food" type="radio" id="baked-food">
+              <label class="input-btn__label" for="baked-food">
+                Выпечка <span class="input-btn__item-count">31</span>
+              </label>
+            </li>
+            <li class="input-btn">
+              <input class="input-btn__input" name="food-type" value="grill-food" type="radio" id="grill-food">
+              <label class="input-btn__label" for="grill-food">
+                Гриль <span class="input-btn__item-count">8</span>
+              </label>
+            </li>
+            <li class="input-btn">
+              <input class="input-btn__input" name="food-type" value="child-food" type="radio" id="child-food">
+              <label class="input-btn__label" for="child-food">
+                Детское <span class="input-btn__item-count">12</span>
+              </label>
+            </li>
+            <li class="input-btn">
+              <input class="input-btn__input" name="food-type" value="snacks-food" type="radio" id="snacks-food">
+              <label class="input-btn__label" for="snacks-food">
+                Закуски <span class="input-btn__item-count">21</span>
+              </label>
+            </li>
+            <li class="input-btn">
+              <input class="input-btn__input" name="food-type" value="soup-food" type="radio" id="soup-food">
+              <label class="input-btn__label" for="soup-food">
+                Супы <span class="input-btn__item-count">14</span>
+              </label>
+            </li>
+            <li class="input-btn">
+              <input class="input-btn__input" name="food-type" value="child-food" type="radio" id="child-food">
+              <label class="input-btn__label" for="child-food">
+                Детское <span class="input-btn__item-count">12</span>
+              </label>
+            </li>
+            <li class="input-btn">
+              <input class="input-btn__input" name="food-type" value="snacks-food" type="radio" id="snacks-food">
+              <label class="input-btn__label" for="snacks-food">
+                Закуски <span class="input-btn__item-count">21</span>
+              </label>
+            </li>
+            <li class="input-btn">
+              <input class="input-btn__input" name="food-type" value="soup-food" type="radio" id="soup-food">
+              <label class="input-btn__label" for="soup-food">
+                Супы <span class="input-btn__item-count">14</span>
+              </label>
+            </li>
+            <li class="input-btn">
+              <input class="input-btn__input" name="food-type" value="soup-food" type="radio" id="soup-food">
+              <label class="input-btn__label" for="soup-food">
+                Супы <span class="input-btn__item-count">14</span>
+              </label>
+            </li>
+            <li class="input-btn">
+              <input class="input-btn__input" name="food-type" value="soup-food" type="radio" id="soup-food">
+              <label class="input-btn__label" for="soup-food">
+                Супы <span class="input-btn__item-count">14</span>
+              </label>
+            </li>
+          </ul>
+          
+          <h2 class="filter__title">Популярные блюда<span class="filter__title__item-count">12</span></h2>
+          <p class="sorting-price">По цене <button class="sorting-price__toggle">`</button></p>
+        </form>
+      </div>
+    </section>
+
+    <aside class="block-orders">
+      <h2 class="block-orders__title">Мой заказ</h2>
+      <!--добавить svg-->
+      <p class="block-orders__not-find">Пока пусто :)</p>
+    </aside>
+  </main>
 </body>
 </html>
