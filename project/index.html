@@ -3,12 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Ресторан</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
   <header class="header">
     <nav class="site-nav">
-      <button class="site-nav__toggle">Включить/выключить меню сайта</button>
-      <ul class="site-nav__list">
+      <div class="menu-toggle">
+        <svg class="menu-toggle__icon" viewBox="0 0 24 16"><use xlink:href="img/sprite.svg#menu-toggle"></use></svg>
+      </div>
+      <ul class="site-nav__list site-nav__list--show">
         <li class="site-nav__item"><a href="#">Рестораны</a></li>
         <li class="site-nav__item"><a href="#">Доставка</a></li>
         <li class="site-nav__item"><a href="#">Караоке</a></li>
@@ -17,10 +21,12 @@
         <li class="site-nav__item"><a href="#">Контакты</a></li>
       </ul>
     </nav>
-
-    <ul class="user-nav">
+    <a class="logo header__logo" href="#">Логотип</a>
+    <ul class="user-nav header__user-nav">
       <li class="login user-nav__item">
-        <a class="login__userpic"><img src="#">Константин</a>
+        <a class="login__userpic">
+          <svg class="login__icon" viewBox="0 0 22 19"><use xlink:href="img/sprite.svg#user-icon"></use></svg> <span class="login__name">Константин</span>
+        </a>
       </li>
     </ul>
   </header>
@@ -29,15 +35,20 @@
     <section class="catalog">
       <header class="catalog__header">
         <div class="about-us">
-          <h1 class="about-us__title">Ресторан</h1>
-          <p class="about-us__info about-us__info--type-cuisine"><span>Кухня</span> Восточная</p>
-          <p class="about-us__info about-us__info--min-order-price"><span>Заказ</span> От 1000 Р</p>
-          <p class="about-us__info about-us__info--delivery-time"><span>Доставка</span> с 11:00 до 02:00</p>
+          <div class="about-us__wrapper">
+            <h1 class="about-us__title">Ресторан</h1>
+            <p class="about-us__info about-us__info--type-kitchen"><span>Кухня</span><br> Восточная</p>
+            <p class="about-us__info about-us__info--min-order-price"><span>Заказ</span><br> От 1000 Р</p>
+            <p class="about-us__info about-us__info--delivery-time"><span>Доставка</span><br> с 11:00 до 02:00</p>
+          </div>
           <a class="about-restaurants" href="#">О ресторане</a>
         </div>
       </header>
 
       <div class="filter catalog__filter">
+        <button class="filter__toggle">Включить/выключить меню сайта
+          <svg class="filter__icon"><use xlink:href="img/sprite.svg#filter-icon"></use></svg>
+        </button>
         <form class="filter-form" action="/" method="post">
           <ul class="filter__btns">
             <li class="input-btn">
@@ -119,18 +130,244 @@
               </label>
             </li>
           </ul>
-          
-          <h2 class="filter__title">Популярные блюда<span class="filter__title__item-count">12</span></h2>
-          <p class="sorting-price">По цене <button class="sorting-price__toggle">`</button></p>
         </form>
       </div>
+
+      <section class="goods catalog__goods">
+        <h2 class="catalog-goods__title">Популярные <span class="catalog-goods__title--for-desktop">блюда</span><span class="goods-title__item-count">12</span></h2>
+        <p class="sorting-price">По цене <button class="sorting-price__toggle">`</button></p>
+        
+        <ul class="goods__list">
+          <li class="goods__item">
+            <a href="#">
+              <picture>
+                <source media="(min-width: 600px)" srcset="img/goods-1-tablet.jpg">
+                <img class="goods__img" src="img/goods-1.jpg" width="273" height="200" alt="">
+              </picture>
+            </a>
+            <h3 class="goods__title">
+              Плов Чайханский <span class="goods__weight">250 г</span> <b class="goods__price">246 Р</b>
+            </h3>
+            <p class="goods__composition">
+              Камчатский краб, авокадо, свежие овощи и цитрусовый...<b class="excerpt">подробнее</b>
+            </p>
+            
+            <div class="goods__amount">
+              <button type="button" class="goods__btn goods__btn--decrease">уменьшить</button>
+              <label class="goods__label"><input class="goods__count" value="2" type="text"></label>
+              <button type="button" class="goods__btn goods__btn--increase">увеличить</button>
+            </div>
+          </li>
+          <li class="goods__item">
+            <a href="#">
+              <picture>
+                <source media="(min-width: 600px)" srcset="img/goods-2-tablet.jpg">
+                <img class="goods__img goods__img--active" src="img/goods-2.jpg" width="273" height="200" alt="">
+              </picture>
+            </a>
+            <h3 class="goods__title">
+              Шаверма <span class="goods__weight">336 г</span> <b class="goods__price">246 Р</b>
+            </h3>
+            <p class="goods__composition">
+              Камчатский краб, авокадо, свежие овощи и цитрусовый...<b class="excerpt excerpt--active">подробнее</b>
+            </p>
+            
+            <div class="goods__amount">
+              <button type="button" class="goods__btn goods__btn--decrease">уменьшить</button>
+              <label class="goods__label"><input class="goods__count" value="2" type="text"></label>
+              <button type="button" class="goods__btn goods__btn--increase">увеличить</button>
+            </div>
+          </li>
+          <li class="goods__item goods__item--for-desktop">
+            <a href="#"><img class="goods__img" src="img/goods-3.jpg" width="273" height="200" alt=""></a>
+            <h3 class="goods__title">
+              Шашлык <span class="goods__weight">250 г</span> <b class="goods__price">656 Р</b>
+            </h3>
+            <p class="goods__composition">
+              Камчатский краб, авокадо, свежие овощи и цитрусовый...<b class="excerpt">подробнее</b>
+            </p>
+            
+            <div class="goods__amount">
+              <button type="button" class="goods__btn goods__btn--decrease">уменьшить</button>
+              <label class="goods__label"><input class="goods__count" value="2" type="text"></label>
+              <button type="button" class="goods__btn goods__btn--increase">увеличить</button>
+            </div>
+          </li>
+          <li class="goods__item goods__item--for-desktop">
+            <a href="#"><img class="goods__img" src="img/goods-4.jpg" width="273" height="200" alt=""></a>
+            <h3 class="goods__title">
+              Судак <span class="goods__weight">250 г</span> <b class="goods__price">226 Р</b>
+            </h3>
+            <p class="goods__composition">
+              Камчатский краб, авокадо, свежие овощи и цитрусовый...<b class="excerpt">подробнее</b>
+            </p>
+            
+            <div class="goods__amount">
+              <button type="button" class="goods__btn goods__btn--decrease">уменьшить</button>
+              <label class="goods__label"><input class="goods__count" value="2" type="text"></label>
+              <button type="button" class="goods__btn goods__btn--increase">увеличить</button>
+            </div>
+          </li>
+          <li class="goods__item goods__item--for-desktop">
+            <a href="#"><img class="goods__img" src="img/goods-5.jpg" width="273" height="200" alt=""></a>
+            <h3 class="goods__title">
+              Манты <span class="goods__weight">250 г</span> <b class="goods__price">326 Р</b>
+            </h3>
+            <p class="goods__composition">
+              Камчатский краб, авокадо, свежие овощи и цитрусовый...<b class="excerpt">подробнее</b>
+            </p>
+            
+            <div class="goods__amount">
+              <button type="button" class="goods__btn goods__btn--decrease">уменьшить</button>
+              <label class="goods__label"><input class="goods__count" value="2" type="text"></label>
+              <button type="button" class="goods__btn goods__btn--increase">увеличить</button>
+            </div>
+          </li>
+          <li class="goods__item goods__item--for-desktop">
+            <a href="#"><img class="goods__img" src="img/goods-6.jpg" width="273" height="200" alt=""></a>
+            <h3 class="goods__title">
+              Шаверма <span class="goods__weight">250 г</span> <b class="goods__price">126 Р</b>
+            </h3>
+            <p class="goods__composition">
+              Камчатский краб, авокадо, свежие овощи и цитрусовый...<b class="excerpt">подробнее</b>
+            </p>
+            
+            <div class="goods__amount">
+              <button type="button" class="goods__btn goods__btn--decrease">уменьшить</button>
+              <label class="goods__label"><input class="goods__count" value="2" type="text"></label>
+              <button type="button" class="goods__btn goods__btn--increase">увеличить</button>
+            </div>
+          </li>
+          <li class="goods__item goods__item--for-desktop">
+            <a href="#"><img class="goods__img" src="img/goods-7.jpg" width="273" height="200" alt=""></a>
+            <h3 class="goods__title">
+              Бешбармак <span class="goods__weight">250 г</span> <b class="goods__price">446 Р</b>
+            </h3>
+            <p class="goods__composition">
+              Камчатский краб, авокадо, свежие овощи и цитрусовый...<b class="excerpt">подробнее</b>
+            </p>
+            
+            <div class="goods__amount">
+              <button type="button" class="goods__btn goods__btn--decrease">уменьшить</button>
+              <label class="goods__label"><input class="goods__count" value="2" type="text"></label>
+              <button type="button" class="goods__btn goods__btn--increase">увеличить</button>
+            </div>
+          </li>
+          <li class="goods__item goods__item--for-desktop">
+            <a href="#"><img class="goods__img" src="img/goods-8.jpg" width="273" height="200" alt=""></a>
+            <h3 class="goods__title">
+              Ковурма <span class="goods__weight">250 г</span> <b class="goods__price">246 Р</b>
+            </h3>
+            <p class="goods__composition">
+              Камчатский краб, авокадо, свежие овощи и цитрусовый...<b class="excerpt">подробнее</b>
+            </p>
+            
+            <div class="goods__amount">
+              <button type="button" class="goods__btn goods__btn--decrease">уменьшить</button>
+              <label class="goods__label"><input class="goods__count" value="2" type="text"></label>
+              <button type="button" class="goods__btn goods__btn--increase">увеличить</button>
+            </div>
+          </li>
+        </ul>
+
+        <h2 class="catalog-goods__title catalog-goods__title--for-mobile">Горячее<span class="goods-title__item-count">12</span></h2>
+        <ul class="goods__list goods__list--for-mobile">
+          <li class="goods__item">
+            <a href="#">
+              <picture>
+                <source media="(min-width: 600px)" srcset="img/goods-1-tablet.jpg">
+                <img class="goods__img" src="img/goods-1.jpg" width="273" height="200" alt="">
+              </picture>
+            </a>
+            <h3 class="goods__title">
+              Плов Чайханский <span class="goods__weight">250 г</span> <b class="goods__price">246 Р</b>
+            </h3>
+            <p class="goods__composition">
+              Камчатский краб, авокадо, свежие овощи и цитрусовый...<b class="excerpt">подробнее</b>
+            </p>
+            
+            <div class="goods__amount">
+              <button type="button" class="goods__btn goods__btn--decrease">уменьшить</button>
+              <label class="goods__label"><input class="goods__count" value="2" type="text"></label>
+              <button type="button" class="goods__btn goods__btn--increase">увеличить</button>
+            </div>
+          </li>
+          <li class="goods__item">
+            <a href="#">
+              <picture>
+                <source media="(min-width: 600px)" srcset="img/goods-2-tablet.jpg">
+                <img class="goods__img" src="img/goods-2.jpg" width="273" height="200" alt="">
+              </picture>
+            </a>
+            <h3 class="goods__title">
+              Шаверма <span class="goods__weight">336 г</span> <b class="goods__price">246 Р</b>
+            </h3>
+            <p class="goods__composition">
+              Камчатский краб, авокадо, свежие овощи и цитрусовый...<b class="excerpt">подробнее</b>
+            </p>
+            
+            <div class="goods__amount">
+              <button type="button" class="goods__btn goods__btn--decrease">уменьшить</button>
+              <label class="goods__label"><input class="goods__count" value="2" type="text"></label>
+              <button type="button" class="goods__btn goods__btn--increase">увеличить</button>
+            </div>
+          </li>
+        </ul>
+      </section>
     </section>
 
     <aside class="block-orders">
-      <h2 class="block-orders__title">Мой заказ</h2>
-      <!--добавить svg-->
+      <h2 class="block-orders__title"><a href="#">Мой заказ <span class="order-count">4</span></a></h2>
       <p class="block-orders__not-find">Пока пусто :)</p>
     </aside>
+
+
+    <section class="big-goods">
+      <h1 class="visually-hidden">Полное описание товара</h1>
+      <ul class="big-goods__list">
+        <li class="big-goods__item">
+          <button class="close big-goods__close">X</button>
+          <a href="#">
+            <picture>
+              <source media="(min-width: 600px)" srcset="img/goods-2-tablet.jpg">
+              <img class="big-goods__img" src="img/goods-2.jpg" width="273" height="200" alt="">
+            </picture>
+          </a>
+          <div class="big-goods__info">
+            <h3 class="big-goods__title">
+              Стейк из говядины <span class="big-goods__weight">250 г</span> 
+            </h3>
+            <p class="big-goods__description">
+              <span>Описание</span> <br> Стейк из поясничной части мраморной говядины. Рекомендуемая степень прожарки medium
+            </p>
+            <p class="big-goods__composition">
+              <span>Состав</span> <br> Микс салатов, лосось, соус терияки, соус Унаги
+            </p>
+            <p class="big-goods__characteristics">
+              <span>Пищевая ценность</span><br>
+              <span class="big-goods__span big-goods__calories"><b>650</b>ккал</span>
+              <span class="big-goods__span big-goods__proteins"><b>34</b>белки</span>
+              <span class="big-goods__span big-goods__fats"><b>60</b>жиры</span>
+              <span class="big-goods__span big-goods__carbs"><b>12</b>углеводы</span>
+            </p>
+          </div>
+          
+          <div class="big-goods__amount">
+            <div>
+              <button type="button" class="goods__btn big-goods__btn--decrease">уменьшить</button>
+              <label class="big-goods__label"><input class="big-goods__count" value="2" type="text"></label>
+              <button type="button" class="goods__btn big-goods-cards--increase">увеличить</button>
+            </div>
+            <button class="big-goods__button-done">Готово</button>
+            <div class="big-goods__inner">
+              <span class="big-goods__final-amount">246 Р</span>
+              <button class="big-goods__button-add">Добавить</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
   </main>
+  <script src="js/popup.js"></script>
 </body>
 </html>

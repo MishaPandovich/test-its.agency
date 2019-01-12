@@ -1,0 +1,56 @@
+.user-nav {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.user-nav__item {
+	cursor: pointer;
+}
+
+.login {
+	position: absolute;
+    top: 37%;
+    top: 37%;
+    right: 4%;
+    
+    width: 6.3%;
+    height: 6.3%;
+}
+
+.login__userpic {
+	font-size: 0;
+}
+
+.login__icon {
+	fill: #575757;
+	stroke: #575757;
+}
+/*
+@media (min-width: 1200px) {
+	.user-nav {
+		margin-left: 39%;
+	}
+
+	.login {
+		position: static;
+	}
+
+	.login__userpic {
+		position: relative;
+
+		font-family: TTNorms, sans-serif;
+		line-height: normal;
+		font-size: 15px;
+		padding: 0;
+		color: #333333;
+	}
+
+	.login__icon {
+	    position: absolute;
+	    width: 17px;
+	    height: 17px;
+    	top: 0px;
+    	left: -23px;
+    }
+}*/

@@ -1,0 +1,79 @@
+.filter-form {
+	display: none;
+}
+
+.filter__toggle {
+	font-size: 0;
+	border: none;
+
+	position: fixed;
+    top: 70%;
+   	right: 15px;
+	width: 48px;
+	height: 48px;
+
+	border-radius: 100%;
+	background: #D62323;
+	box-shadow: 0px 7px 20px -3px #000000;
+	cursor: pointer;
+}
+
+.filter__icon {
+	width: 15px;
+	height: 16px;
+}
+/*
+@media (min-width: 1200px) {
+	.filter-form {
+		display: block;
+	}
+
+	.filter__toggle {
+		display: none;
+	}	
+
+	.filter__btns {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+    	padding-left: 11%;
+	}
+	
+	.input-btn {
+		display: inline-block;
+		padding-top: 1.9%;
+    	padding-bottom: 2.5%;
+    	margin-right: 40px;
+	}
+
+	.input-btn__input {
+		display: none;
+	}
+	
+	.input-btn__label {
+		position: relative;
+
+		font-family: TTNorms, sans-serif;
+		line-height: normal;
+		font-size: 18px;
+		color: #333333;
+		cursor: pointer;
+	}
+
+	.input-btn__item-count {
+		position: absolute;
+		top: -5px;
+    	right: -10px;
+		
+		font-size: 12px;
+		color: #999999;
+	}
+
+	.input-btn__input:checked + .input-btn__label {
+	  color: #D62323;
+	}
+
+	.input-btn__input:checked + .input-btn__label span {
+	  color: #D62323;
+	}
+}*/
