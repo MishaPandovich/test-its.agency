@@ -17,15 +17,39 @@
 	margin: 5% 0;
 
 	& a {
+		position: relative;
+		padding-bottom: 3px;
+
 		font-family: TTNorms, sans-serif;
 		line-height: normal;
 		font-size: 1.2em;
 		color: #000000;
 		text-decoration: none;
+
+		transition-duration: 1s;
+		transition-property: border-bottom;
+
+		& .line {
+			position: absolute;
+		    bottom: 0;
+		    left: 0;
+
+		    width: 0;
+		    height: 2px;
+		    background: #D62323;
+
+		    transition-duration: 0.5s;
+  			transition-property: width;
+		}
+
+		&:hover .line {
+			margin-left: -5%;
+			width: 110%;
+		}
 	}
 }
 
-.site-nav__list--sho {
+.site-nav__list--show {
 	display: block;
 }
 
@@ -34,12 +58,43 @@
 	position: absolute;
 	top: 40%;
     left: 4.5%;
+    z-index: 3;
 
     width: 6.5%;
     height: 20%;
     cursor: pointer;
+
+    &__icon {
+		fill: #575757;
+	}
+
+	&__icon--close {
+		stroke: #575757;
+	}
+
+	&:hover .menu-toggle__icon {
+		fill: #D62323;
+	}
+
+	 &:hover .menu-toggle__icon--close {
+		stroke: #D62323;
+	}
 }
-/*
+
+.menu-toggle__icon--close {
+	display: none;	
+}
+
+.menu-toggle--show {
+	& .menu-toggle__icon {
+		display: none;
+	}
+
+	& .menu-toggle__icon--close {
+		display: block;	
+	}
+}
+
 @media (min-width: 1200px) {
 	.menu-toggle {
 		display: none;
@@ -53,29 +108,30 @@
 		margin: 0;
 		margin-left: 40%;
 		height: 100%;
-		width: 120%;
-    	
-    	border-right: 1px solid #eeeeee;
+		width: 100%;
+		max-width: 740px;
 	}	
 
 	.site-nav__item {
 		padding-right: 15px;
 		text-align: left;
 		margin: 0;
-
-		&:nth-child(3) {
-			position: relative;
-			padding-right: 90px;
-
-			::after {
-				content: "";
-			    width: 45px;
-			    height: 45px;
-			    position: absolute;
-			    top: -12px;
-			    right: 23px;
-			    background: #D62323;
-			}
-		}
+		margin-bottom: 10px;
 	}
-}*/
+
+	.site-nav__item:nth-child(3) {
+		display: inline-block;
+		position: relative;
+		padding-right: 90px;
+	}
+
+	.site-nav__item:nth-child(3)::after {
+		content: "";
+		width: 45px;
+	    height: 45px;
+	    position: absolute;
+	    top: -12px;
+	    right: 23px;
+	    background: #D62323;
+	}
+}

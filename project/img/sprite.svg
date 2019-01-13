@@ -14,6 +14,13 @@
 	<path d="M16 3L16 0L12.8 -1.39876e-07L12.8 3L16 3Z" fill="white"/>
 </symbol>
 <symbol id="menu-toggle">
-	<path d="M0 16H24V14H0V16ZM0 9H24V7H0V9ZM0 0V2H24V0H0Z" fill="#575757"/>
+	<path d="M0 16H24V14H0V16ZM0 9H24V7H0V9ZM0 0V2H24V0H0Z"/>
+</symbol>
+<symbol id="close-icon">
+<path d="M29.9858 10.9955L9.99487 30.9864" stroke-width="2"/>
+<path d="M29.9858 30.9863L9.99487 10.9954" stroke-width="2"/>
+</symbol>
+<symbol id="minus-icon">
+	<path d="M0.5 5.5L10.5 5.5" stroke="white" stroke-width="2"/>
 </symbol>
 </svg>
