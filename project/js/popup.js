@@ -1,18 +1,26 @@
-var link = document.querySelector('.goods__img--active'),
-	excerpt = document.querySelector('.excerpt--active'),
-	heightScroll = document.querySelector('.header').clientHeight;
+var $link = $('.goods__img--active'),
+	$excerpt = $('.excerpt--active'),
+	$cardGoods = $('.big-goods__item'),
+	$cardClose = $(".big-goods__close");
 
-var popup = $('.big-goods__item');
 
-function openPopup(element) {
-	element.addEventListener('click', function(event) {
-		event.preventDefault();
-		popup.addClass('big-goods__item--show');
+function openCardGoods(element, evt) {
+	element.on('click', function(evt) {
+		evt.preventDefault();
+		$cardGoods.addClass('big-goods__item--show');
 
 		var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-		popup.animate({ "top": scrollTop}, 1500);
+		$cardGoods.animate({ "top": scrollTop}, 1500);
+
+		$cardGoods.addClass('active'); 
 	});
 }
 
-openPopup(link);
-openPopup(excerpt);
+openCardGoods($link);
+openCardGoods($excerpt);
+
+$cardClose.on('click', function() {
+	$cardGoods.removeClass('big-goods__item--show');
+	$cardGoods.removeClass('active'); 
+	$cardGoods.css('top', '3000px');
+});

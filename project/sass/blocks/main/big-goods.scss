@@ -1,9 +1,6 @@
 .visually-hidden {
 	display: none;
 }
-.big-goods {
-	display: none;
-}
 
 .big-goods {
 	&__list {
@@ -13,8 +10,9 @@
 	}
 
 	&__item {
-		display: block;
+		display: none;
 		position: absolute;
+		top: 1000px;
 		z-index: 3;
 		background: #ffffff;
 
@@ -60,17 +58,20 @@
     height: 67%;
     margin: auto;
     margin-top: 19%;
-
-    opacity: 0; 
+}
+/*анимация*/
+.big-goods__item--show .big-goods__img {
+	opacity: 0; 
     transition-duration: 3s, 3s;
-    transition-property: opacity, transform;
-    transform: translateY(1000px); 
+    transition-property: opacity, transform; 
+    transform: translateY(1000px);
 }
 
-.big-goods__item--show .big-goods__img {
+.active .big-goods__img {
 	opacity: 1;
 	transform: translateY(10px); 
 }
+/*анимация*/
 
 .big-goods__info {
 	padding-bottom: 29px;
@@ -80,34 +81,40 @@
 
 	font-family: TTNorms, sans-serif;
 	line-height: 21px;
-	font-size: 15px;
+	font-size: 0.9em;
 	color: #333333;
 	margin-top: 11%;
-	opacity: 0; 
-
-	transition-duration: 3s, 3s;
-    transition-property: opacity, transform;
-    transform: translateY(1000px); 
 
 	& span {
 		color: #999999;
 	}
 }
 
+/*анимация*/
 .big-goods__item--show .big-goods__info {
+	opacity: 0; 
+	transition-duration: 3s, 3s;
+    transition-property: opacity, transform;
+    transform: translateY(1000px); 
+}
+
+.active .big-goods__info {
 	opacity: 1;
 	transform: translateY(0px); 
 }
+/*анимация*/
 
 .big-goods__title {
 	margin-top: 10.8%;
 	font-family: TTNorms, sans-serif;
 	line-height: 27px;
-	font-size: 24px;
+	font-size: 1.5em;
 	letter-spacing: 0.01em;
-
 	color: #333333;
-	
+}
+
+/*анимация*/
+.big-goods__item--show .big-goods__title {
 	opacity: 0;
 	transition-delay: 0.5s;
 	transition-duration: 3s, 3s;
@@ -115,10 +122,11 @@
     transform: translateY(1000px);
 }
 
-.big-goods__item--show .big-goods__title {
+.active .big-goods__title {
 	opacity: 1;
 	transform: translateY(0px); 
 }
+/*анимация*/
 
 .big-goods__weight {
 	font-size: 1em;
@@ -131,27 +139,31 @@
 	margin-top: 7.5%;
     width: 79%;
 
-    opacity: 0;
-	transition-duration: 3s, 3s;
-    transition-property: opacity, transform;
-    transform: translateY(1000px);
-
     & span {
     	display: inline-block;
 		margin-bottom: 4%;
 	}
 }
+
 /*анимация*/
-.big-goods__description {
+.big-goods__item--show .big-goods__description {
 	transition-delay: 0.8s;
+	opacity: 0;
+	transition-duration: 3s, 3s;
+    transition-property: opacity, transform;
+    transform: translateY(1000px);
 }
 
-.big-goods__composition {
-	transition-delay: 1s;
-}
-
-.big-goods__item--show .big-goods__description,
 .big-goods__item--show .big-goods__composition {
+	transition-delay: 1s;
+	opacity: 0;
+	transition-duration: 3s, 3s;
+    transition-property: opacity, transform;
+    transform: translateY(1000px);
+}
+
+.active .big-goods__description,
+.active .big-goods__composition {
 	opacity: 1;
 	transform: translateY(0px); 
 }
@@ -160,57 +172,62 @@
 	margin-top: 8%;
 	color: #d4d4d4;
 
-	opacity: 0;
-	transition-delay: 1.2s;
-	transition-duration: 3s, 3s;
-    transition-property: opacity, transform;
-    transform: translateY(1000px);
-
 	& span {
 		display: inline-block;
     	margin-bottom: 0;
 	}
 }
-
+/*анимация*/
 .big-goods__item--show .big-goods__characteristics {
+	opacity: 0;
+	transition-delay: 1.2s;
+	transition-duration: 3s, 3s;
+    transition-property: opacity, transform;
+    transform: translateY(1000px);
+}
+
+.active .big-goods__characteristics {
 	opacity: 1;
 	transform: translateY(0px); 
 }
+/*анимация*/
 
 .big-goods__inner--characteristics {
 	display: flex;
     flex-wrap: wrap;
     width: 90%;
 
-    opacity: 0;
-	transition-delay: 1.3s;
-	transition-duration: 3s, 3s;
-    transition-property: opacity, transform;
-    transform: translateY(1000px);
-
     & span {
     	margin-right: 13%;
-		line-height: 17px;
-		font-size: 12px;
+		line-height: 1.1em;
+		font-size: 0.75em;
 		color: #999999;
 
 		& b {
-			font-size: 18px;
+			font-size: 1.125em;
 			color: #333333;
 		}
 	}
 }
 
 .big-goods__item--show .big-goods__inner--characteristics {
+	opacity: 0;
+	transition-delay: 1.3s;
+	transition-duration: 3s, 3s;
+    transition-property: opacity, transform;
+    transform: translateY(1000px);
+}
+
+.active .big-goods__inner--characteristics {
 	opacity: 1;
 	transform: translateY(0px); 
 }
 
 /*анимация элементов блока характеристик*/
-.big-goods__calories,
-.big-goods__proteins,
-.big-goods__fats,
-.big-goods__carbs {
+.big-goods__item--show .big-goods__calories,
+.big-goods__item--show .big-goods__proteins,
+.big-goods__item--show .big-goods__fats,
+.big-goods__item--show .big-goods__carbs {
 	opacity: 0;
 	transition-delay: 1.5s;
 	transition-duration: 3s, 3s;
@@ -218,22 +235,22 @@
     transform: translateY(1000px);
 }
 
-.big-goods__proteins {
+.big-goods__item--show .big-goods__proteins {
 	transition-delay: 1.7s;
 }
 
-.big-goods__fats {
+.big-goods__item--show .big-goods__fats {
 	transition-delay: 1.9s;
 }
 
-.big-goods__carbs {
+.big-goods__item--show .big-goods__carbs {
 	transition-delay: 2.1s;
 }
 
-.big-goods__item--show .big-goods__calories,
-.big-goods__item--show .big-goods__proteins,
-.big-goods__item--show .big-goods__fats,
-.big-goods__item--show .big-goods__carbs {
+.active .big-goods__calories,
+.active .big-goods__proteins,
+.active .big-goods__fats,
+.active .big-goods__carbs {
 	opacity: 1;
 	transform: translateY(0px); 
 }
@@ -242,14 +259,16 @@
 	display: flex;
 	width: 100%;
 	height: 55px;
+}
 
+.big-goods__item--show .big-goods__amount {
 	opacity: 0; 
     transition-duration: 3s, 3s;
     transition-property: opacity, transform;
     transform: translateY(1000px); 
 }
 
-.big-goods__item--show .big-goods__amount {
+.active .big-goods__amount {
 	opacity: 1;
 	transform: translateY(0px); 
 }
@@ -300,11 +319,11 @@
 
 .big-goods__count {
     width: 100%;
-    margin-top: 21px;
+    margin-top: 1.31em;
 
 	font-family: TTNorms, sans-serif;
 	line-height: normal;
-	font-size: 12px;
+	font-size: 0.75em;
 
     border: none;
     text-align: center;
@@ -320,8 +339,8 @@
     width: 55%;
 
     font-family: TTNorms, sans-serif;
-	line-height: 17px;
-	font-size: 12px;
+	line-height: 1.1em;
+	font-size: 0.75em;
 	text-align: center;
 	text-transform: uppercase;
 
@@ -335,7 +354,7 @@
 		background: #ab1b1b;
 	}
 }
-/*
+
 @media (min-width: 1200px) {
 	.big-goods__item {
 		display: flex;
@@ -381,4 +400,4 @@
 	    color: #ffffff;
 	    background: #D62323;
 	}
-}*/
+}

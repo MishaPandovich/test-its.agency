@@ -7,15 +7,15 @@ body {
 
 body {
 	position: relative;
-	width: 1200px;
+	width: 100%;
 	margin: 0 auto;
 }
-/*
-@media (min-width: 450px) {
+
+@media (min-width: 450px) and (max-width: 1199px)  {
 	html {
 		font-size: calc(100% + 1.2vw);
 	}
-}*/
+}
 
 @media (min-width: 1200px) {
 	.html {

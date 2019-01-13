@@ -1,3 +1,7 @@
+.catalog {
+	position: relative;
+}
+
 .catalog__header {
 	border-top: 1px solid transparent;
     background: #D62323 url(../img/background-mobile.jpg) no-repeat;
@@ -8,6 +12,7 @@
 @media (min-width: 1200px) {
 	.catalog {
 		width: 94.7%;
+		position: relative;
 	}
 
 	.catalog__header {
