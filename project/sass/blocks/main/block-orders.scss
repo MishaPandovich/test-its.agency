@@ -72,3 +72,18 @@
 		color: #A7A7A7;
 	}
 }
+
+@media (min-width: 1600px) {
+	.block-orders__title a {
+	    margin-top: 59px;
+	    font-size: 24px;
+	}
+
+	.block-orders__title::after {
+    	top: 64px;
+    }
+
+    .block-orders__not-find {
+	    margin-top: 254px;
+	}
+}

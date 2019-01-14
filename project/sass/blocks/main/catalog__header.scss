@@ -12,13 +12,13 @@
 @media (min-width: 1200px) {
 	.catalog {
 		width: 94.7%;
-		position: relative;
 	}
 
 	.catalog__header {
+		position: relative;
 		max-height: 580px;
 		background: url(../img/background-desktop.jpg) no-repeat;
-    	background-size: 100%;
-    	border-top: 1px solid #eeeeee;
+        background-size: 100% 100%;
+    	border-top: 2px solid #eeeeee;
 	}
 }

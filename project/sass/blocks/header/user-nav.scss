@@ -34,11 +34,15 @@
 
 @media (min-width: 1200px) {
 	.user-nav {
-	    max-width: 15%;
-		margin-left: auto;
-    	padding: 3%;
+	    max-width: 22%;
+	    width: 12%;
+	    min-height: 64px;
+	    padding: 0 1%;
+	    padding-right: 0%;
+	    margin-left: auto;
 
-    	border: 1px solid green;
+	   	border-left: 1px solid #E8EAED;
+	    box-sizing: border-box;
 
     	&__item {
 			margin-bottom: 5px;
@@ -46,8 +50,10 @@
 	}
 
 	.login {
-		position: relative;
-    	height: 100%;
+	    position: relative;
+	    height: 100%;
+	    margin-top: 13%;
+	    margin-left: 35%;
 	}
 
 	.login__userpic {
@@ -59,9 +65,21 @@
 	}
 
 	.login .login__icon {
-	    top: 0%;
-	    right: 0;
+	    top: -2px;
+    	left: -27%;
+	    
 	    width: 19px;
 	    height: 18px;
     }
+}
+
+@media (min-width: 1600px) {
+	.user-nav {
+		width: 9%;
+	}
+
+	.login {
+		margin-top: 15%;
+    	margin-left: 26%;
+	}
 }

@@ -1,7 +1,7 @@
 .catalog-goods__title {
 	display: inline-block;
 	position: relative;
-	margin-top: 60px;
+	margin-top: 65px;
     margin-left: 4.2%;
 
 	font-family: TTNorms, sans-serif;
@@ -143,9 +143,10 @@
 @media (min-width: 1200px) {
 	.goods {
 		&__img {
-			width: 100%;
-    		height: 45%;
+		    width: 100%;
+		    height: 50%;
 		    margin: 0;
+		    margin-top: 15%;
 		}
 
 		&__title {
@@ -177,7 +178,7 @@
 	    margin-top: 29px;
 	    margin-left: 3.4%;
 	    margin-right: 4.6%;
-	    margin-bottom: 0;
+	    margin-bottom: 30px;
 	}
 
 	.goods__item--for-desktop {
@@ -205,5 +206,123 @@
 		margin-left: 46%;
     	margin-top: 75px;
     	font-size: 18px;
+
+    	&__toggle {
+		    border: none;
+			background: none;
+			cursor: pointer;
+		}
+	}
+
+	.goods__amount {
+		display: inline-block;
+		margin-left: 90%;
+	}
+
+	.goods__btn {
+		position: relative;
+		width: 20px;
+		height: 20px;
+		font-size: 0;
+		background: none;
+		border: none;
+
+		cursor: pointer;
+	}
+
+	.goods__icon {
+		position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 20px;
+	    height: 100%;
+
+	    &--minus {
+			stroke: #000000;
+			fill: #000000;
+		}
+
+		&--plus {
+			width: 13px;
+	    	height: 14px;
+			fill: #D62323;
+			stroke: #D62323;
+		}
+	}
+
+	.goods__count {
+		width: 20px;
+		height: 20px;
+
+		text-align: center;
+		border: none;
+
+		font-family: TTNorms, sans-serif;
+		line-height: normal;
+		font-size: 14px;
+		font-weight: bold;
+
+	    color: #D62323;
+	}
+
+	.goods__btn--decrease,
+	.goods__count {
+		display: none;
+	}
+
+	.goods__item--add-goods .goods__btn--decrease,
+	.goods__item--add-goods .goods__count {
+		display: inline-block;
+	}
+
+	.goods__item--add-goods .goods__amount {
+		margin-left: 65%;
+	}
+}
+
+@media (min-width: 1600px) {
+	.goods {
+		padding-bottom: 130px;
+    	border-bottom: 1px solid #E8EAED;
+	}
+
+	.goods__item {
+		width: 273px;
+	    margin-top: 40px;
+	    margin-right: 30px;
+	    margin-left: 46px;
+	    margin-bottom: 14px;
+
+	    &:nth-child(4n) {
+			margin-right: 0;
+		}
+	}
+
+	.goods__img {
+	    width: 273px;
+	    height: 200px;
+	    margin: 0;
+	    margin-top: 15%;
+	}
+
+	.sorting-price {
+    	margin-left: 60%;
+    }
+
+    .goods__icon--plus {
+    	width: 10px;
+    	height: 11px;
+	}
+
+	.goods__count {
+    	font-size: 13px;
+	}
+
+	.goods__item--add-goods .goods__amount {
+    	margin-left: 75%;
+	}
+
+	.goods__composition {
+		width: 100%;
 	}
 }
